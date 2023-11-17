@@ -1,0 +1,37 @@
+<div class="container mx-auto">
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+          <table class="min-w-full text-left text-sm font-light">
+            <thead class="border-b font-medium">
+            <tr>
+              <th scope="col" class="px-6 py-4">Nombre de usuario</th>
+              <th scope="col" class="px-6 py-4">Fecha de nacimiento</th>
+              <th scope="col" class="px-6 py-4">Edad</th>
+              <th scope="col" class="px-6 py-4">Dirección</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b" *ngFor="let usuario of usuarios()">
+                <td class="whitespace-nowrap px-6 py-4 font-medium">
+                  {{ usuario.name }}
+                </td>
+                <td class="whitespace-nowrap px-6 py-4">
+                  {{ usuario.fechaNacimiento | date:'dd-MM-Y' }}
+                </td>
+                <td class="whitespace-nowrap px-6 py-4">
+                {{ usuario.edad }} años
+                </td>
+                <td class="whitespace-nowrap px-6 py-4">
+                  {{ domicilioCompleto(usuario.domicilio) }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
